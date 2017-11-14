@@ -1,3 +1,6 @@
+
+const rp = require('request-promise').defaults({ json: true })
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
