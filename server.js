@@ -32,7 +32,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
 app.use(session({
-    secret: 'ilovescotchscotchyscotchscotch', // session secret
+    secret: 'ParametricsPizza-42-Party', // session secret
     resave: true,
     saveUninitialized: true
 }));
