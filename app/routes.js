@@ -28,8 +28,20 @@ module.exports = function(app, passport) {
 		res.render('pages.ejs', {
 			pages: pages
 		})
-		// res.json(pages)
 	})
+
+	app.post('/pages', (req, res) => {
+		const session = req.session
+		session.page_selected = req.body.page
+
+		res.redirect('/code')
+	})
+
+	app.get('/code', (req, res) => {
+		console.log(req.session.page_selected)
+		res.send(req.session.page_selected || 'uh oh')
+	})
+
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {

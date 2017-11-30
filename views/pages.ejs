@@ -36,4 +36,16 @@
 </div>
 
 </body>
+<script>
+$('div.dropdown div.dropdown-menu a').click(function(e) {
+		e.preventDefault()
+		console.log('Selected:',this.text)
+
+		fetch('/pages', {
+				method: 'POST',
+				body: {page: this.text}
+		})
+
+})
+</script>
 </html>
